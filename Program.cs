@@ -25,16 +25,26 @@ namespace EntityFramework.EF6.SQLite
 
             Console.WriteLine(absolute);
 
-            using (var ctx = new SchoolContext())
+            try
             {
-                
-             
-              //  Console.ReadLine();
+                using (var ctx = new SchoolContext())
+                {
 
-                Student stud = new Student() { StudentName = "New Student" };
 
-                ctx.Students.Add(stud);
-                ctx.SaveChanges();
+                    //  Console.ReadLine();
+
+                    Student stud = new Student() { StudentName = "New Student_3", DateOfBirth = "02/17/96" };
+
+                    ctx.Students.Add(stud);
+                    ctx.SaveChanges();
+                }
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message + ex.InnerException);
+                Console.ReadLine();
+
             }
         }
     }

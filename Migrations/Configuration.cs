@@ -9,8 +9,7 @@ namespace EntityFramework.EF6.SQLite.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(EntityFramework.EF6.SQLite.SchoolContext context)
